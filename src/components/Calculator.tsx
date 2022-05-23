@@ -187,8 +187,8 @@ function Calculator() {
                                     setHotspotListSearch('');
                                     setHotspotListSearching(false);
                                     setHotspot(undefined);
-                                    setHotspotRewardsStartDate(undefined);
-                                    setHotspotRewardsEndDate(undefined);
+                                    setHotspotRewardsStartDate(lastMonthAt12AM);
+                                    setHotspotRewardsEndDate(todayAt1159PM);
                                     setHotspotRewardsHistoryFetching(false);
                                     setHotspotRewardsHistory(undefined);
                                 }}
