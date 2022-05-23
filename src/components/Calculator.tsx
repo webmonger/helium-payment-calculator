@@ -125,8 +125,19 @@ function Calculator() {
                                     }}><small>(clear)</small></Typography.Link>
                                 </Space>
                             </Typography.Paragraph>
-                            {recentSearches.map(search => (
-                                <div><Typography.Link onClick={() => setHotspotListSearch(search)}>{search}</Typography.Link></div>
+                            {recentSearches.map((search, i) => (
+                                <div>
+                                    <Button
+                                        icon={<CloseOutlined />}
+                                        type="text"
+                                        onClick={() => {
+                                            console.log(`index ${i}`);
+                                            recentSearches.splice(i, 1);
+                                            localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
+                                            update(_update + 1);
+                                        }}/>
+                                    <Typography.Link onClick={() => setHotspotListSearch(search)}>{search}</Typography.Link>
+                                </div>
                             ))}
                         </Fragment>
                     )}
